@@ -1,34 +1,40 @@
 <?php
 // Matriks A
-$A = array(
-    array(1, 1, 1),
-    array(2, 2, 2),
-    array(3, 3, 3)
-);
+$A = [
+    [1, 1, 1],
+    [2, 2, 2],
+    [3, 3, 3]
+];
 
 // Matriks B
-$B = array(
-    array(3, 3, 3),
-    array(2, 2, 2),
-    array(1, 1, 1)
-);
+$B = [
+    [3, 3, 3],
+    [2, 2, 2],
+    [1, 1, 1]
+];
 
-// Matriks hasil penjumlahan
-$C = array();
+// Matriks hasil (kosong)
+$C = [];
 
-// Penjumlahan menggunakan looping
+// Proses penjumlahan menggunakan looping
 for ($i = 0; $i < 3; $i++) {
     for ($j = 0; $j < 3; $j++) {
         $C[$i][$j] = $A[$i][$j] + $B[$i][$j];
     }
 }
 
-// Tampilkan hasil
+// Tampilkan hasil dalam bentuk tabel HTML
 echo "<h3>Hasil Penjumlahan Matriks A + B</h3>";
+echo "<table border='0' cellpadding='5' cellspacing='0'>";
+
+// Loop untuk menampilkan hasil
 for ($i = 0; $i < 3; $i++) {
+    echo "<tr>";
     for ($j = 0; $j < 3; $j++) {
-        echo $C[$i][$j] . " ";
+        echo "<td>" . $C[$i][$j] . "</td>";
     }
-    echo "<br>";
+    echo "</tr>";
 }
+
+echo "</table>";
 ?>
